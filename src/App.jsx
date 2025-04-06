@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Men from "./components/Men";
-import Women from "./components/Women";
-import Children from "./components/Children";
+import Home from "./pages/Home";
+import Men from "./pages/Men";
+import Women from "./pages/Women";
+import Children from "./pages/Children";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
