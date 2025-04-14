@@ -6,6 +6,7 @@ import Children from "./pages/Children";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
+import AddToCart from "./pages/AddToCart";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/men" element={<Men />} />
         <Route path="/women" element={<Women />} />
         <Route path="/children" element={<Children />} />
+        <Route path="/cart" element={<AddToCart />} />
       </Routes>
     </div>
   );
