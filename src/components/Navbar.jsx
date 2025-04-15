@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import shopperLogo from "../assets/logo_big.png";
 import cart from "../assets/cart_icon.png";
 import { Link, Routes } from "react-router-dom";
 
 function Navbar() {
+  const [searchItem, setsearchItem] = useState("");
+  console.log(searchItem);
   return (
     <div className="flex justify-between px-10 flex-wrap shadow-lg">
       <div className="flex mr-16">
@@ -25,6 +27,17 @@ function Navbar() {
             <Link to="/children">Children</Link>
           </li>
         </ol>
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="enter item to search"
+          className="p-2 bg-slate-200 mt-5"
+          value={searchItem}
+          onChange={(e) => {
+            setsearchItem(e.target.value);
+          }}
+        />
       </div>
       <div className="flex gap-x-5">
         <button> Login </button>
