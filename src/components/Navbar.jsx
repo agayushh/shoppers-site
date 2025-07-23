@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import shopperLogo from "../assets/logo_big.png";
 import cart from "../assets/cart_icon.png";
 import { Link, Routes } from "react-router-dom";
+import { AiOutlineMenu } from "react-icons/ai";
+import { FaShoppingCart } from "react-icons/fa";
 
 function Navbar() {
   const [searchItem, setsearchItem] = useState("");
   console.log(searchItem);
   return (
-    <div className="flex justify-between px-10 flex-wrap shadow-lg">
-      <div className="flex mr-16">
-        <img src={shopperLogo} alt="" />
-        <h1 className="font-normal text-3xl font-mono mt-7">SHOPPER</h1>
+    <div className="flex md:flex-row justify-between px-4 md:px-10 pt-2 md:py-4 shadow-lg">
+      <div className="flex justify-center md:justify-start md:mr-16 mb-4 md:mb-0">
+        <img src={shopperLogo} alt="Shopper Logo" className="h-12" />
+        <h1 className="font-normal text-2xl md:text-3xl font-mono flex justify-center items-center pt-2">
+          SHOPPER
+        </h1>
       </div>
-      <div>
-        <ol className="flex space-x-8 mt-7 mr-16">
+      <div className="lg:block hidden">
+        <ol className="flex flex-wrap justify-center items-center space-x-4 md:space-x-8 mt-0 md:mt-2 mr-0 md:mr-16">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -28,20 +32,18 @@ function Navbar() {
           </li>
         </ol>
       </div>
-      <div>
-        <input
-          type="text"
-          placeholder="enter item to search"
-          className="p-2 bg-slate-200 mt-5"
-          value={searchItem}
-          onChange={(e) => {
-            setsearchItem(e.target.value);
-          }}
-        />
-      </div>
-      <div className="flex gap-x-5">
-        <button> Login </button>
-        <img src={cart} alt="" className="w-8 h-8 mt-7" />
+      <div className="flex justify-center items-center">
+        <div className="lg:block hidden">
+          <div className="flex justify-center md:justify-end gap-x-5 items-center">
+            <button className="py-2 px-4"> Login </button>
+            <div className="hidden lg:block">
+              <FaShoppingCart size={24} />
+            </div>
+          </div>
+        </div>
+        <div className="block lg:hidden">
+          <AiOutlineMenu size={24} />
+        </div>
       </div>
     </div>
   );
