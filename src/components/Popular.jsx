@@ -3,27 +3,43 @@ import data_product from "../assets/all_product";
 
 export default function Popular() {
   return (
-    <div>
-      <div>Popular in Women</div>
-      <div className="grid grid-cols-3 space-x-6 space-y-5">
-        {data_product.map((item, key) => (
-          <div className="border-2" key={item.id}>
-            <div>
-              <div>
-                {" "}
-                <img src={item.image} alt="" />
+    <section className="bg-black text-white py-10 px-4 md:px-12">
+      <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center">
+        Popular in <span className="text-orange-400">Women</span>
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {data_product.map((item) => (
+          <div
+            key={item.id}
+            className="bg-zinc-900 rounded-2xl shadow-xl overflow-hidden hover:shadow-orange-400/20 transition-shadow group"
+          >
+            <div className="overflow-hidden">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+
+            <div className="p-4 space-y-2">
+              <p className="text-sm text-orange-400">{item.category}</p>
+              <h3 className="text-lg font-semibold">{item.name}</h3>
+              <div className="flex items-center space-x-2">
+                <span className="text-orange-300 font-bold text-md">
+                  ₹{item.new_price}
+                </span>
+                <span className="line-through text-gray-400 text-sm">
+                  ₹{item.old_price}
+                </span>
               </div>
-              <div>{item.category}</div>
-              <div>{item.name}</div>
-              <div>{item.new_price}</div>
-              <div>{item.old_price}</div>
-              <button className="bg-orange-400 flex justify-center w-full p-2 hover:bg-orange-300">
-                Add to cart
+              <button className="mt-4 w-full bg-orange-400 hover:bg-orange-500 text-black py-2 rounded-lg transition-colors duration-200">
+                Add to Cart
               </button>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
