@@ -4,6 +4,7 @@ import cart from "../assets/cart_icon.png";
 import { Link, Routes } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
+import SearchBar from "./SearchBar";
 
 function Navbar() {
   const [searchItem, setsearchItem] = useState("");
@@ -40,6 +41,9 @@ function Navbar() {
               <FaShoppingCart size={24} />
             </div>
           </div>
+        </div>
+        <div>
+          <SearchBar />
         </div>
         <div className="block lg:hidden">
           <AiOutlineMenu size={24} />

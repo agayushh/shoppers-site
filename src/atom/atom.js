@@ -1,9 +1,12 @@
 import { atom, selector } from "recoil";
 
-const user = atom({
-    key: "user",
-    default: null,
+export const searchItem = atom({
+  key: "searchItem",
+  default: "",
 });
 
-export { user };
+// const searchItemSelector = selector({
+//   key: "searchItemSelector",
+//   get: () => {},
+// });
 
