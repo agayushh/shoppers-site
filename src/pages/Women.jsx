@@ -29,12 +29,12 @@ export default function Women() {
               <h3 className="text-white text-xl font-semibold mb-2 truncate">
                 {product.name}
               </h3>
-              <p className="text-orange-400 text-lg font-medium flex justify-center gap-3">
+              <div className="text-orange-400 text-lg font-medium flex justify-center gap-3">
                 ₹{product.new_price}
                 <div className="line-through text-white">
                   ₹{product.old_price}
                 </div>
-              </p>
+              </div>
             </div>
 
             <button className="mt-4 bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-700 transition">

@@ -14,7 +14,7 @@ import SearchBarPopup from "./components/SearchBarPopup";
 function App() {
   const location = useLocation();
   const hideNavbarRoutes = ["/login", "/signup"];
-  const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname)
+  const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
   return (
     <div>
       {shouldShowNavbar && <Navbar />}

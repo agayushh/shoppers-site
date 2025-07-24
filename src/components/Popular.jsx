@@ -8,7 +8,7 @@ export default function Popular() {
         Latest <span className="text-orange-400">Collection</span>
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 2xl:grid-cols-6 gap-8">
         {data_product.map((item) => (
           <div
             key={item.id}
