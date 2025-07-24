@@ -3,8 +3,8 @@ import HeroImage from "../assets/hero_image.png";
 
 export default function Hero() {
   return (
-    <div className="bg-gradient-to-b from-white to-orange-300 flex justify-between min-h-[50vh] px-4 md:px-8 lg:px-12">
-      <div className="text-xl md:text-2xl font-medium flex flex-col flex-wrap justify-center sm:h-[100vh] h-auto mx-auto md:ml-12 lg:ml-44 md:text-left w-full md:w-auto md:space-y-4">
+    <div className="bg-gradient-to-b from-white to-orange-300 flex justify-between min-h-[80vh] px-4 md:px-8 lg:px-12">
+      <div className="text-xl md:text-2xl font-medium flex flex-col flex-wrap justify-center sm:h-[80vh] h-auto mx-auto md:ml-12 lg:ml-44 md:text-left w-full md:w-auto md:space-y-4">
         <h1 className="text-xl text-orange-500 font-bold">NEW ARRIVALS ONLY</h1>
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold">NEW</h1>
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold">
