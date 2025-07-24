@@ -1,14 +1,17 @@
-import React, { useState } from "react";
 import shopperLogo from "../assets/logo_big.png";
-import cart from "../assets/cart_icon.png";
-import { Link, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
-import SearchBar from "./SearchBar";
+import { IoIosSearch } from "react-icons/io";
+import { useSetRecoilState } from "recoil";
+import { searchBarModal } from "../atom/atom";
 
 function Navbar() {
-  const [searchItem, setsearchItem] = useState("");
-  console.log(searchItem);
+  const setSearchModalState = useSetRecoilState(searchBarModal);
+  const openSearchModal = () => {
+    setSearchModalState(true);
+  };
+
   return (
     <div className="flex md:flex-row justify-between px-4 md:px-10 pt-2 md:py-4 shadow-lg">
       <div className="flex justify-center md:justify-start md:mr-16 mb-4 md:mb-0">
@@ -34,6 +37,13 @@ function Navbar() {
         </ol>
       </div>
       <div className="flex justify-center items-center">
+        <div className="m-auto mr-10 lg:mr-3 ">
+          <IoIosSearch
+            size={24}
+            onClick={openSearchModal}
+            className="cursor-pointer"
+          />
+        </div>
         <div className="lg:block hidden">
           <div className="flex justify-center md:justify-end gap-x-5 items-center">
             <button className="py-2 px-4"> Login </button>
@@ -41,9 +51,6 @@ function Navbar() {
               <FaShoppingCart size={24} />
             </div>
           </div>
-        </div>
-        <div>
-          <SearchBar />
         </div>
         <div className="block lg:hidden">
           <AiOutlineMenu size={24} />
