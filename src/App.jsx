@@ -9,13 +9,16 @@ import Navbar from "./components/Navbar";
 import AddToCart from "./pages/AddToCart";
 import Login from "./pages/Login";
 import Signup from "./pages/SignUp";
+import SearchBarPopup from "./components/SearchBarPopup";
 
 function App() {
   const location = useLocation();
   const hideNavbarRoutes = ["/login", "/signup"];
+  const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname)
   return (
     <div>
-      {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
+      {shouldShowNavbar && <Navbar />}
+      {shouldShowNavbar && <SearchBarPopup />}
 
       <Routes>
         <Route path="/" element={<Home />} />
