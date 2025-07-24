@@ -46,12 +46,12 @@ const SearchBarPopup = () => {
   return (
     <div className="fixed inset-0 z-50 bg-black/40 bg-opacity-50 flex flex-wrap items-start pt-24 justify-center">
       <div className="backdrop-blur-3xl w-full max-w-3xl mx-4 rounded-xl shadow-lg p-6 relative">
-        {/* <button
+        <button
           className="absolute top-2 right-1 text-gray-900 hover:text-gray-600"
           onClick={() => setIsOpen(false)}
         >
           <MdCancel size={24} />
-        </button> */}
+        </button>
 
         <input
           autoFocus
