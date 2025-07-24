@@ -30,6 +30,34 @@ export const filteredItemsSelector = selector({
   },
 });
 
+export const menItem = selector({
+  key: "menItem",
+  get: ({ get }) => {
+    const items = get(allItems);
+    return items.filter((item) => {
+      return item.category === "men";
+    });
+  },
+});
+export const womenItem = selector({
+  key: "womenItem",
+  get: ({ get }) => {
+    const items = get(allItems);
+    return items.filter((item) => {
+      return item.category === "women";
+    });
+  },
+});
+export const kidItem = selector({
+  key: "kidItem",
+  get: ({ get }) => {
+    const items = get(allItems);
+    return items.filter((item) => {
+      return item.category === "kid";
+    });
+  },
+});
+
 // const searchItemSelector = selector({
 //   key: "searchItemSelector",
 //   get: () => {},
