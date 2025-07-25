@@ -1,9 +1,11 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { womenItem } from "../atom/atom";
+import { useCart } from "../hooks/useCart";
 
 export default function Women() {
   const women = useRecoilValue(womenItem);
+  const { addToCart, cart } = useCart();
 
   return (
     <section className="min-h-screen bg-white px-4 py-8">
@@ -37,8 +39,13 @@ export default function Women() {
               </div>
             </div>
 
-            <button className="mt-4 bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-700 transition">
-              Add to Cart
+            <button
+              className="mt-4 bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-700 transition"
+              onClick={() => addToCart(product.id)}
+            >
+              {cart.some((item) => item.id === product.id)
+                ? "Remove from cart"
+                : "Add to cart"}
             </button>
           </div>
         ))}
