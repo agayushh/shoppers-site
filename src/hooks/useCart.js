@@ -20,7 +20,6 @@ export const useCart = () => {
         setCart([...cart, { ...product, quantity: 1 }]);
       }
     }
-    console.log("added");
   };
 
   const updateQuantity = (id, delta) => {
