@@ -32,7 +32,14 @@ export const filteredItemsSelector = selector({
 
 export const cartItem = atom({
   key: "cartItem",
-  default: [],
+  default: JSON.parse(localStorage.getItem("cartedItems") || "[]"),
+  effects_UNSTABLE: [
+    ({ onSet }) => {
+      onSet((newValue) => {
+        localStorage.setItem("cartedItems", JSON.stringify(newValue));
+      });
+    },
+  ],
 });
 
 export const menItem = selector({
