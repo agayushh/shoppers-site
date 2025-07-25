@@ -30,6 +30,11 @@ export const filteredItemsSelector = selector({
   },
 });
 
+export const cartItem = atom({
+  key: "cartItem",
+  default: [],
+});
+
 export const menItem = selector({
   key: "menItem",
   get: ({ get }) => {
@@ -57,8 +62,3 @@ export const kidItem = selector({
     });
   },
 });
-
-// const searchItemSelector = selector({
-//   key: "searchItemSelector",
-//   get: () => {},
-// });
