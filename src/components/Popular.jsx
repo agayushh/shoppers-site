@@ -1,7 +1,9 @@
 import React from "react";
 import data_product from "../assets/all_product";
+import { useCart } from "../hooks/useCart";
 
 export default function Popular() {
+  const { cart, addToCart } = useCart();
   return (
     <section className="bg-black text-white py-10 px-4 md:px-12">
       <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center">
@@ -33,8 +35,13 @@ export default function Popular() {
                   ₹{item.old_price}
                 </span>
               </div>
-              <button className="mt-4 w-full bg-orange-400 hover:bg-orange-500 text-black py-2 rounded-lg transition-colors duration-200">
-                Add to Cart
+              <button
+                className="mt-4 w-full bg-orange-400 hover:bg-orange-500 text-black py-2 rounded-lg transition-colors duration-200"
+                onClick={() => addToCart(item.id)}
+              >
+                {cart.some((cartItem) => item.id === cartItem.id)
+                  ? "Remove from cart"
+                  : "Add to cart"}
               </button>
             </div>
           </div>
