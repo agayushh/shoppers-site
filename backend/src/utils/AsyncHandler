@@ -8,3 +8,5 @@ const AsyncHandler = (fun) => async (req, res, next) => {
     });
   }
 };
+
+export { AsyncHandler };
