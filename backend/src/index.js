@@ -1,5 +1,5 @@
-import connectToDb from "./db";
-import app from "./app";
+import connectToDb from "./db/index.js";
+import app from "./app.js";
 
 //Mistake 1
 // connectToDb().then(() => {
