@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { userrouter } from "./routes/user.route";
+import { userrouter } from "./routes/user.route.js";
 const app = express();
 
 app.use(
@@ -10,12 +10,11 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json({ limit: "16kb" }));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 // app.use(express.static("public"))
 app.use(cookieParser());
 
-app.use('/user', userrouter)
+app.use("/user/api", userrouter);
 
 export default app;
-
