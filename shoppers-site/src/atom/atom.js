@@ -24,9 +24,9 @@ export const filteredItemsSelector = selector({
 
     if (!trimmedSearchItem) return [];
 
-    return items.filter((item) => {
-      return item.name.toLowerCase().includes(trimmedSearchItem);
-    });
+    return items.filter((item) =>
+      item.name.toLowerCase().includes(trimmedSearchItem)
+    );
   },
 });
 
