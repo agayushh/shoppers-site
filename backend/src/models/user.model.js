@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -25,6 +24,13 @@ const userSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+
+    cartedItems: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Cart",
+      },
+    ],
   },
   {
     timestamps: true,
