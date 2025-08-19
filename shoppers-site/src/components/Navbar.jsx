@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
-import { useSetRecoilState } from "recoil";
-import { searchBarModal } from "../atom/atom";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { searchBarModal, usernameNav } from "../atom/atom";
 import { useCart } from "../hooks/useCart";
 
 function Navbar() {
   const { cart } = useCart();
+  const name = useRecoilValue(usernameNav);
   const setSearchModalState = useSetRecoilState(searchBarModal);
   const openSearchModal = () => {
     setSearchModalState(true);
@@ -91,14 +92,24 @@ function Navbar() {
         </div>
         <div className="lg:block hidden">
           <div className="flex justify-center md:justify-end gap-x-5 items-center">
-            <Link
-              className="py-2 px-4 text-gray-700 font-medium border border-transparent rounded-md 
+            {name ? (
+              <Link
+                className="py-2 px-4 text-gray-700 font-medium border border-transparent rounded-md 
                          transition-all duration-300 hover:text-black hover:border-gray-300 hover:bg-gray-50 hover:scale-105 
                          active:scale-95 shadow-sm hover:shadow-md"
-              to="/login"
-            >
-              Login
-            </Link>
+              >
+                {name}
+              </Link>
+            ) : (
+              <Link
+                className="py-2 px-4 text-gray-700 font-medium border border-transparent rounded-md 
+                         transition-all duration-300 hover:text-black hover:border-gray-300 hover:bg-gray-50 hover:scale-105 
+                         active:scale-95 shadow-sm hover:shadow-md"
+                to="/login"
+              >
+                Login
+              </Link>
+            )}
             <div className="hidden lg:block">
               <Link to="/cart" className="relative group">
                 <FaShoppingCart

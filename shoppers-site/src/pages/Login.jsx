@@ -17,6 +17,7 @@ export default function Login() {
       );
       console.log(`loggedIn user: ${resposne.data}`);
       if (resposne.data?.user?._id) {
+        localStorage.setItem("username", resposne.data.user.name);
         navigate("/");
       } else {
         setError(resposne.error || "Login Failed");

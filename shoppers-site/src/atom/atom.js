@@ -6,6 +6,10 @@ export const searchItem = atom({
   default: "",
 });
 
+export const usernameNav = atom({
+  key: "usernameNav",
+  default: localStorage.getItem("username") || "",
+});
 export const searchBarModal = atom({
   key: "searchBarModal",
   default: false,
