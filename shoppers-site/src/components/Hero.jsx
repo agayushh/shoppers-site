@@ -1,7 +1,7 @@
 import React from "react";
 import HeroImage from "../assets/hero_image.png";
 
-export default function Hero() {
+export default function Hero({ onScrollClick }) {
   return (
     <div className="bg-gradient-to-b from-white to-orange-300 flex justify-between min-h-[80vh] px-4 md:px-8 lg:px-12">
       <div className="text-xl md:text-2xl font-medium flex flex-col flex-wrap justify-center sm:h-[80vh] h-auto mx-auto md:ml-12 lg:ml-44 md:text-left w-full md:w-auto md:space-y-4">
@@ -13,7 +13,10 @@ export default function Hero() {
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold">
           FOR EVERYONE
         </h1>
-        <button className="mt-6 md:mt-9 bg-orange-500 text-white rounded-full text-lg md:text-xl p-4 w-fit mx-auto md:mx-0 ml-[-1px] hover:bg-orange-600 transition-colors">
+        <button
+          className="mt-6 md:mt-9 bg-orange-500 text-white rounded-full text-lg md:text-xl p-4 w-fit mx-auto md:mx-0 ml-[-1px] hover:bg-orange-600 transition-colors"
+          onClick={onScrollClick}
+        >
           Latest Collection
         </button>
       </div>

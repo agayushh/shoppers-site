@@ -1,11 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import data_product from "../assets/all_product";
 import { useCart } from "../hooks/useCart";
 
-export default function Popular() {
+const Popular = forwardRef((props, ref) => {
   const { cart, addToCart } = useCart();
   return (
-    <section className="bg-black text-white py-10 px-4 md:px-12">
+    <section className="bg-black text-white py-10 px-4 md:px-12" ref={ref}>
       <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center">
         Latest <span className="text-orange-400">Collection</span>
       </h2>
@@ -49,4 +49,6 @@ export default function Popular() {
       </div>
     </section>
   );
-}
+});
+
+export default Popular;
