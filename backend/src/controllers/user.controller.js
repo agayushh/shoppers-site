@@ -80,8 +80,6 @@ const loginuser = AsyncHandler(async (req, res) => {
     .json({
       message: "User logged in successfully ",
       user: loggedInUser,
-      accessToken,
-      refreshToken,
     });
 });
 
